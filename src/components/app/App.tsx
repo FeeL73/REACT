@@ -12,6 +12,7 @@ function App() {
         <div style={{ width: "50%" }}>
           <BurgerConstructor />
         </div>
+        <div>123</div>
         <div style={{ width: "50%" }}>
           <BurgerIngredients />
         </div>
