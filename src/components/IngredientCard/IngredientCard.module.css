@@ -1,0 +1,40 @@
+.ingredientCard {
+  position: relative;
+  width: 272px;
+  height: 208px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.counter {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.ingredientPrice {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ingredientName {
+  text-align: center;
+}
+
+/* App , 
+AppHeader , 
+BurgerIngredients ,
+BurgerConstructor , 
+Modal , 
+ModalOverlay , 
+OrderDetails , 
+IngredientDetails
+
+лишние: 
+AppConstructor
+IngredientCard
+HeaderButton */
