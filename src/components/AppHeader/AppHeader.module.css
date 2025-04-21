@@ -1,3 +1,4 @@
+/* AppHeader.module.css */
 .header {
   background: var(--interface-modal-bg);
   width: 100%;
@@ -24,4 +25,16 @@
 .navMenu {
   composes: header-flex;
   gap: 8px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 40px;
+  transition: background 0.3s ease;
+}
+
+.link:hover {
+  background: var(--text-disabled);
 }

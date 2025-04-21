@@ -1,10 +1,14 @@
-import AppHeader from "../AppHeader/AppHeader";
-import AppConstructor from "../AppConstructor/AppConstructor";
 import { useState, useEffect } from "react";
+import AppHeader from "../AppHeader/AppHeader";
+import BurgerIngredients from "../BurgerIngredients/BurgerIngredients";
+import BurgerConstructor from "../BurgerConstructor/BurgerConstructor";
+import ingredientsPropTypes from "../../utils/ingredientsPropTypes";
+import styles from "../App/App.module.css";
+import PropTypes from "prop-types";
 
 function App() {
   const API_URL = "https://norma.nomoreparties.space/api/ingredients";
-  const [ingredients, setIngredients] = useState([]);
+  const [ingredients, setIngredients] = useState<any[]>([]);
 
   useEffect(() => {
     const fetchIngredients = async () => {
@@ -23,12 +27,22 @@ function App() {
 
     fetchIngredients();
   }, []);
+
   return (
     <>
       <AppHeader />
-      <AppConstructor data={ingredients} />
+      <main className={styles.mainContainer}>
+        <div className={`${styles.contentWrapper} pb-10 pl-5`}>
+          <BurgerIngredients ingredients={ingredients} />
+          <BurgerConstructor ingredients={ingredients} />
+        </div>
+      </main>
     </>
   );
 }
+
+App.propTypes = {
+  ingredients: PropTypes.arrayOf(ingredientsPropTypes.isRequired),
+};
 
 export default App;

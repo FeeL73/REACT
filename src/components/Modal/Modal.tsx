@@ -1,5 +1,4 @@
 import modalStyles from "./Modal.module.css";
-
 import ModalOverlay from "../ModalOverlay/ModalOverlay";
 import { CloseIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import { createPortal } from "react-dom";
@@ -10,6 +9,7 @@ interface ModalProps {
   onClose: () => void;
   title?: string;
 }
+
 const Modal: React.FC<ModalProps> = ({ children, title, onClose }) => {
   const closeByEscape = useCallback(
     (e: KeyboardEvent) => {
@@ -20,13 +20,16 @@ const Modal: React.FC<ModalProps> = ({ children, title, onClose }) => {
     },
     [onClose]
   );
+
   useEffect(() => {
+    // Добавляем обработчик нажатия клавиши Escape
     document.addEventListener("keydown", closeByEscape);
 
+    // Очистка эффекта: удаляем обработчик события при размонтировании компонента
     return () => {
-      document.addEventListener("keydown", closeByEscape);
+      document.removeEventListener("keydown", closeByEscape);
     };
-  }, [onClose]);
+  }, [closeByEscape]); // Зависимость от closeByEscape
 
   return createPortal(
     <div className={modalStyles.modal}>

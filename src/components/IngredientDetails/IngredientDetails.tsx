@@ -1,5 +1,4 @@
 import styles from "./IngredientDetails.module.css";
-import IngredientDetail from "./IngredientDetail/IngredientDetail";
 
 interface Ingredient {
   name: string;
@@ -54,10 +53,14 @@ const IngredientDetails = ({ item }: IngredientDetailsProps) => {
         <ul className={styles.detailsList}>
           {detailsList.map((detail) => (
             <li key={detail.id}>
-              <IngredientDetail
-                detailValue={detail.detailValue}
-                detailText={detail.detailText}
-              />
+              <div className={styles.detail}>
+                <p className="text text_type_main-default text_color_inactive">
+                  {detail.detailText}
+                </p>
+                <span className="text text_type_main-default text_color_inactive">
+                  {detail.detailValue}
+                </span>
+              </div>
             </li>
           ))}
         </ul>
