@@ -1,0 +1,82 @@
+/* BurgerIngredients.module.css */
+
+/* Стили для компонента BurgerIngredients */
+.burgerIngredients {
+  height: 100%;
+  width: calc(50% - 20px);
+}
+
+.tabContainer {
+  display: flex;
+}
+
+.ingredientsWrapper {
+  height: calc(80% - 40px);
+  overflow-y: auto;
+}
+
+.ingredientsWrapper::-webkit-scrollbar {
+  background-color: var(--interface-input);
+  border-radius: 20px;
+  width: 8px;
+}
+
+.ingredientsWrapper::-webkit-scrollbar-thumb {
+  background-color: var(--text-dark-grey-secondary-text);
+  border-radius: 20px;
+}
+
+.ingredientsMenu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+/* Стили для компонентов ингредиентов */
+.ingredientCard {
+  position: relative;
+  width: 272px;
+  height: 208px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.counter {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.ingredientPrice {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ingredientName {
+  text-align: center;
+}
+
+.detailsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.detailsList {
+  display: flex;
+  gap: 20px;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
